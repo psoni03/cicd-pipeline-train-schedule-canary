@@ -50,6 +50,7 @@ pipeline {
                     kubeconfigId: 'kubeconfig',
                     configs: 'train-schedule-kube-canary.yml',
                     enableConfigSubstitution: true
+                    )
             
             
             }
@@ -61,6 +62,7 @@ pipeline {
             }
               environment {
                 CANARY_REPLICAS = 0
+              }
             steps {
                 input 'Deploy to Production?'
                 milestone(1)
